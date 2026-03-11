@@ -1,0 +1,67 @@
+{
+  "gva_sdk_version": "1.0",
+  "app": {
+    "name": null,
+    "package": null,
+    "version": null,
+    "developer": null,
+    "description": null,
+    "icon": "icon.png"
+  },
+  "android": {
+    "min_api_level": 28,
+    "target_api_level": 34,
+    "permissions": [
+      null
+    ],
+    "required_libs": []
+  },
+  "linux": {
+    "arch": ["x86_64", "arm64"],
+    "required_packages": [
+      null
+    ],
+    "permissions": [
+      null
+    ]
+  },
+  "shared_resources": {
+    "data_dir": null,
+    "config_dir": null,
+    "assets": [
+      "config.json",
+      "resources.zip"
+    ]
+  },
+  "communication": {
+    "ipc_method": "dbus",
+    "endpoints": [
+      {
+        "name": "data_sync",
+        "type": "bidirectional",
+        "protocol": "json"
+      },
+      {
+        "name": "file_access",
+        "type": "shared_filesystem",
+        "location": null
+      }
+    ]
+  },
+  "launch": {
+    "primary_layer": "android",
+    "android_entry": null,
+    "linux_entry": null,
+    "launch_behavior": {
+      "mobile_mode": "launch_android_only",
+      "desktop_mode": "launch_both_or_linux_primary"
+    }
+  },
+  "dependencies": {
+    "shared_configs": [
+      "settings.json",
+      "user_prefs.json"
+    ],
+    "data_sync_interval": 5000
+  }
+}
